@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModInfo>
+	<Name value="WAILA" />
+	<DisplayName value="WAILA" />
+	<Description value="What Am I Looking At" />
+	<Author value="FoxyTeacup" />
+	<Version value="1.0" />
+	<SkipWithAntiCheat value="true" />
+</ModInfo>

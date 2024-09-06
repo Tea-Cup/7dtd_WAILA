@@ -1,0 +1,2 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
+inpActWAILA,UI,Controls Dialog,x,,Toggle WAILA,,,,,,,,,,,,,
