@@ -1,5 +1,5 @@
 <mine_just_mine>
-  <append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
+  <append xpath="/xui/ruleset[@name='default']/window_group[@name='compass']">
     <window name="windowWAILA" anchor="LeftTop" />
   </append>
 </mine_just_mine>

@@ -1,12 +1,27 @@
 <mine_just_mine>
   <append xpath="/windows">
     <window name="windowWAILA" controller="WAILA.XUiC_WAILA,WAILA" anchor="LeftTop" pos="12,-12" width="400" height="48">
-      <rect pos="0,0" width="100%" height="100%">
-        <sprite depth="4" pos="0,0" sprite="menu_empty" color="[darkestGrey]" width="100%" height="100%" type="sliced" />
-        <sprite depth="6" pos="0,0" sprite="menu_empty3px" color="[black]" width="100%" height="100%" type="sliced" fillcenter="false" />
+      <rect name="rootWAILA" pos="0,0" width="100%" height="100%">
+        <sprite name="bg1" depth="4" pos="0,0" sprite="menu_empty" color="[darkestGrey]" width="100%" height="100%" type="sliced" />
+        <sprite name="bg2" depth="6" pos="0,0" sprite="menu_empty3px" color="[black]" width="100%" height="100%" type="sliced" fillcenter="false" />
         <sprite depth="7" pos="24,-24" atlas="ItemIconAtlas" sprite="{target_icon}" width="40" height="40" pivot="center" foregroundlayer="true" color="[white]" />
         <label depth="8" pos="48,-24" font_size="32" color="[white]" justify="left" pivot="left" text="{target_name}" width="348" height="100%" />
       </rect>
     </window>
   </append>
+
+  <conditional>
+    <if cond="mod_loaded('AGF-V1-HUDPlus-1Main')">
+      <remove xpath="/windows/window[@name='windowWAILA']/rect[@name='rootWAILA']/sprite[@name='bg1']" />
+      <remove xpath="/windows/window[@name='windowWAILA']/rect[@name='rootWAILA']/sprite[@name='bg2']" />
+
+      <setattribute xpath="/windows/window[@name='windowWAILA']" name="pos">7,-7</setattribute>
+      <setattribute xpath="/windows/window[@name='windowWAILA']" name="width">398</setattribute>
+      <setattribute xpath="/windows/window[@name='windowWAILA']" name="height">46</setattribute>
+
+      <prepend xpath="/windows/window[@name='windowWAILA']/rect[@name='rootWAILA']">
+        <sprite pos="0,0" name="bg_agf" sprite="menu_empty" color="0,0,0,225" foregroundlayer="true" height="100%" width="100%" type="sliced" />
+      </prepend>
+    </if>
+  </conditional>
 </mine_just_mine>
