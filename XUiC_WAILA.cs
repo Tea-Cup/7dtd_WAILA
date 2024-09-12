@@ -11,12 +11,23 @@
 		private string blockIcon = "";
 		private bool hasBox = false;
 		private bool hiddenBox = true;
+		private bool isPaused = false;
 
 		public override void Update(float _dt) {
 			base.Update(_dt);
+
+			bool gamePaused = GameManager.Instance.IsPaused();
+			bool shouldRefresh = false;
+			if (gamePaused != isPaused) {
+				isPaused = gamePaused;
+				shouldRefresh = true;
+			}
+
 			UpdateResult result = UpdateTarget();
 			if (result == UpdateResult.Reset) UnsetTarget();
-			if (result != UpdateResult.Unchanged) RefreshBindings(true);
+			if (result != UpdateResult.Unchanged) shouldRefresh = true;
+				
+			if (shouldRefresh) RefreshBindings(true);
 
 			if (Keybind.WasPressed) {
 				hiddenBox = !hiddenBox;
@@ -80,6 +91,9 @@
 					return true;
 				case "target_icon":
 					value = blockIcon;
+					return true;
+				case "game_playing":
+					value = isPaused ? "false" : "true";
 					return true;
 				default:
 					return base.GetBindingValue(ref value, bindingName);

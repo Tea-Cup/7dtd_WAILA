@@ -1,6 +1,6 @@
 <mine_just_mine>
   <append xpath="/windows">
-    <window name="windowWAILA" controller="WAILA.XUiC_WAILA,WAILA" anchor="LeftTop" pos="12,-12" width="400" height="48">
+    <window name="windowWAILA" controller="WAILA.XUiC_WAILA,WAILA" anchor="LeftTop" pos="12,-12" width="400" height="48" visible="{game_playing}">
       <rect name="rootWAILA" pos="0,0" width="100%" height="100%">
         <sprite name="bg1" depth="4" pos="0,0" sprite="menu_empty" color="[darkestGrey]" width="100%" height="100%" type="sliced" />
         <sprite name="bg2" depth="6" pos="0,0" sprite="menu_empty3px" color="[black]" width="100%" height="100%" type="sliced" fillcenter="false" />
